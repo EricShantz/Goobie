@@ -23,7 +23,7 @@ export default function ShuffleScreen() {
 
   async function playSound() {
     const { sound } = await Audio.Sound.createAsync(
-      require('../assets/lotto.mp3')
+      require('../assets/winner.mp3')
     );
     setSound(sound);
     await sound.playAsync();
@@ -54,7 +54,7 @@ export default function ShuffleScreen() {
 
     setTimeout(function () {
       playSound();
-    }, 2300);
+    }, 3700);
   };
 
   return (
