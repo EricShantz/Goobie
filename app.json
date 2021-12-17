@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "mad9135-p2-react-native-final",
-    "slug": "mad9135-p2-react-native-final",
+    "name": "Goobie",
+    "slug": "Goobie",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -18,6 +18,7 @@
     ],
     "ios": {
       "supportsTablet": true,
+      "bundleIdentifier":"com.GoobieGames.Goobie",
       "infoPlist": {
         "NSMicrophoneUsageDescription": "Want to access your microphone because...",
         "NSPhotoLibraryUsageDescription": "Want to access your photo library because...",
@@ -25,6 +26,7 @@
       }
     },
     "android": {
+      "package": "com.GoobieGames.Goobie",
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
