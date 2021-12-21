@@ -11,7 +11,6 @@ import {
   Image,
   View,
   Pressable,
-  ActivityIndicator,
   KeyboardAvoidingView,
   
 } from 'react-native';
@@ -29,7 +28,6 @@ let globalSetPlayers;
 let globalChosenAvatar;
 let globalSetChosenAvatar;
 let globalImage;
-let globalSetShowActivityIndicator;
 
 export default function HomeScreen({ navigation }) {
   const [image, setImage] = useState(null);
@@ -37,14 +35,12 @@ export default function HomeScreen({ navigation }) {
   const [player, setPlayer] = useState({});
   const [chosenAvatar, setChosenAvatar] = useState();
   const [showModal, setShowModal] = useState(false);
-  const [showActivityIndicator, setShowActivityIndicator] = useState(false)
 
   globalChosenAvatar = chosenAvatar;
   globalSetChosenAvatar = setChosenAvatar;
   globalPlayers = players;
   globalSetPlayers = setPlayers;
   globalImage = image;
-  globalSetShowActivityIndicator = setShowActivityIndicator
 
   let avatars = [
     { image: require('../assets/avatars/Bear.png') },
@@ -94,8 +90,6 @@ export default function HomeScreen({ navigation }) {
     if (!result.cancelled) {
       setImage(result.uri);
       setShowModal(true);
-      setShowActivityIndicator(true)
-
     }
   };
 
@@ -104,7 +98,6 @@ export default function HomeScreen({ navigation }) {
       edges={['left', 'right']}
       style={(theme.container, theme.backgroundStyling)}
     >
-      <ActivityIndicator size='large' color='#E30A5C' animating={showActivityIndicator}/>
       <ScrollView>
         <FlatList
           horizontal={true}
@@ -152,8 +145,6 @@ export default function HomeScreen({ navigation }) {
                 }
                 onPress={() => {
                   setShowModal(false);
-                  setShowActivityIndicator(false)
-
                 }}
               >
                 <Text style={theme.cancelButtonText}>Cancel</Text>
@@ -204,7 +195,6 @@ export default function HomeScreen({ navigation }) {
                     setShowModal(false);
                     setPlayer({});
                     setImage(image);
-                    setShowActivityIndicator(false)
                     }
                 }}
               >
@@ -262,7 +252,6 @@ export default function HomeScreen({ navigation }) {
                     setChosenAvatar(item);
                     setShowModal(true);
                     setImage(null);
-                    setShowActivityIndicator(true)
                   }}
                   key={item + Date.now() + Math.random() * 21}
                   style={theme.avatarContainer}
