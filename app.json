@@ -26,9 +26,10 @@
       }
     },
     "android": {
+      "versionCode": 2,
       "package": "com.GoobieGames.Goobie",
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/goobieIcon.png",
         "backgroundColor": "#FFFFFF"
       },
       "permissions": [
